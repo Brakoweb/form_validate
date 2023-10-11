@@ -5,11 +5,11 @@
     <title>Form by Gabriel Bracamonte</title>
   </head>
   <body>
-    <h1>Contact Us</h1>
     <form id="contactForm">
+      <h1>Form Validation</h1>
       <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" required />
+        <input type="text" id="name" pattern="^[A-Za-z'-]+$" required />
         <span class="error-msg" id="nameError"></span>
       </div>
 
@@ -20,14 +20,21 @@
       </div>
 
       <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" pattern="^\d{10}$" required />
+        <span class="error-msg" id="phoneError"></span>
+      </div>
+
+      <div>
         <label for="message">Message:</label>
         <textarea id="message" required></textarea>
         <span class="error-msg" id="messageError"></span>
       </div>
 
       <button type="submit" id="submitBtn" disabled>Submit</button>
+      <p id="successMessage" class="success"></p>
     </form>
 
-    <p id="successMessage" class="success"></p>
+    <script src="scripts.js"></script>
   </body>
 </html>
